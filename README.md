@@ -4,7 +4,7 @@ A sample integration that reads Salesforce organization metadata through two con
 
 | Directory | What it is |
 |---|---|
-| [`integration/`](integration/) | The integration, a WSO2 Integrator project: package `acme/sfdemo` in [`integration/sfdemo`](integration/sfdemo). `GET /sales` and `GET /support` call Salesforce through the connections `sfSales` and `sfDesk`. |
+| [`integration/`](integration/) | The integration, Ballerina package `wso2/sfdemo` on Ballerina 2201.12. `GET /sales` and `GET /support` call Salesforce through the connections `sfSales` and `sfDesk` (in module `support`). |
 | [`mock-salesforce/`](mock-salesforce/) | A Node.js stand-in for Salesforce's token endpoint and API. It is not part of the integration and runs on its own. |
 
 ## The mock
@@ -21,17 +21,19 @@ So a connection's base URL, `https://<mock host>/<tenant>`, and its credentials 
 
 ## Running the integration locally
 
-Start the mock, then create `integration/sfdemo/Config.toml` (it is git-ignored) with each connection's values:
+Start the mock, then create `integration/Config.toml` (it is git-ignored) with each connection's values:
 
 ```toml
 sfSalesBaseUrl = "http://localhost:9095/sales"
 sfSalesAuthTokenUrl = "http://localhost:9095/sales/services/oauth2/token"
 sfSalesAuthClientId = "sales-client"
 sfSalesAuthClientSecret = "sales-secret"
+
+[wso2.sfdemo.support]
 sfDeskBaseUrl = "http://localhost:9095/support"
 sfDeskAuthTokenUrl = "http://localhost:9095/support/services/oauth2/token"
 sfDeskAuthClientId = "support-client"
 sfDeskAuthClientSecret = "support-secret"
 ```
 
-Then run it from WSO2 Integrator, or with `bal run` in `integration/sfdemo`, and call `http://localhost:9090/sales`.
+Then run it with `bal run` in `integration`, and call `http://localhost:8090/sales`. The package also starts a Ballerina copy of the mock on :9095 (`modules/mock`); stop the Node mock first, or point the values at another port.

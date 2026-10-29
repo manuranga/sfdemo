@@ -1,9 +1,0 @@
-[package]
-org = "acme"
-name = "sfdemo"
-version = "0.1.0"
-distribution = "2201.14.1"
-title = "sfdemo"
-
-[build-options]
-sticky = true
