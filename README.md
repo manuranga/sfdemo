@@ -36,4 +36,4 @@ sfDeskAuthClientId = "support-client"
 sfDeskAuthClientSecret = "support-secret"
 ```
 
-Then run it with `bal run` in `integration`, and call `http://localhost:8090/sales`. The package also starts a Ballerina copy of the mock on :9095 (`modules/mock`); stop the Node mock first, or point the values at another port.
+Then run it with `bal run` in `integration`, and call `http://localhost:8090/sales`.
