@@ -1,0 +1,9 @@
+{
+  "name": "mock-salesforce",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A stand-in for the Salesforce token endpoint and API that echoes the credentials it receives",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js" }
+}
