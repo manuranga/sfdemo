@@ -1,11 +1,11 @@
 import ballerinax/salesforce;
 
-final salesforce:Client sfCrm = check new ({
-    baseUrl: sfCrmBaseUrl,
+final salesforce:Client sfSales = check new ({
+    baseUrl: sfSalesBaseUrl,
     auth: {
-        tokenUrl: sfCrmAuthTokenUrl,
-        clientId: sfCrmAuthClientId,
-        clientSecret: sfCrmAuthClientSecret
+        tokenUrl: sfSalesAuthTokenUrl,
+        clientId: sfSalesAuthClientId,
+        clientSecret: sfSalesAuthClientSecret
     }
 });
 final salesforce:Client sfDesk = check new ({
