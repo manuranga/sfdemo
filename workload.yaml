@@ -6,3 +6,7 @@ endpoints:
     port: 8080
     type: HTTP
     visibility: [project, external]
+configurations:
+  env:
+    - name: DB_URL
+      value: postgres://set-in-workload-yaml
