@@ -6,7 +6,7 @@ listener http:Listener httpDefaultListener = http:getDefaultListener();
 service / on httpDefaultListener {
     resource function get sales() returns json|error {
         do {
-            salesforce:OrganizationMetadata org = check sfCrm->getOrganizationMetaData();
+            salesforce:OrganizationMetadata org = check sfSales->getOrganizationMetaData();
             return {greeting, org};
         } on fail error err {
             // handle error
