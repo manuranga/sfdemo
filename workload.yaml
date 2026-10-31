@@ -1,0 +1,8 @@
+apiVersion: openchoreo.dev/v1alpha1
+metadata:
+  name: ordersbuild
+endpoints:
+  - name: http
+    port: 8080
+    type: HTTP
+    visibility: [project, external]
