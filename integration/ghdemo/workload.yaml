@@ -1,0 +1,8 @@
+apiVersion: openchoreo.dev/v1alpha1
+metadata:
+  name: ghdemo
+dependencies:
+  resources:
+    - ref: default-github-acme
+      envBindings:
+        GITHUB_AUTH_TOKEN: BAL_CONFIG_VAR_ACME_GHDEMO_GITHUBAUTHTOKEN
