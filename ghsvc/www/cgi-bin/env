@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "Content-Type: text/plain"
+echo
+env | grep -E '^(GH|GITHUB)_' | sort | while IFS='=' read -r name value; do
+  echo "$name sha256 $(printf %s "$value" | sha256sum | cut -c1-8)"
+done
