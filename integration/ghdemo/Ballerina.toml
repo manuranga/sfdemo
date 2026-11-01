@@ -1,0 +1,9 @@
+[package]
+org = "acme"
+name = "ghdemo"
+version = "0.1.0"
+distribution = "2201.14.1"
+title = "ghdemo"
+
+[build-options]
+sticky = true

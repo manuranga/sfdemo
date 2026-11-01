@@ -5,6 +5,7 @@ A sample integration that reads Salesforce organization metadata through two con
 | Directory | What it is |
 |---|---|
 | [`integration/`](integration/) | The integration, a WSO2 Integrator project: package `acme/sfdemo` in [`integration/sfdemo`](integration/sfdemo). `GET /sales` and `GET /support` call Salesforce through the connections `sfSales` and `sfDesk`. |
+| [`integration/ghdemo`](integration/ghdemo) | A second integration, package `acme/ghdemo`. `GET /whoami` calls GitHub through the connection `github` and answers with the token owner's login and the first 8 hex characters of the token's SHA-256, which tell you which token it received. |
 | [`mock-salesforce/`](mock-salesforce/) | A Node.js stand-in for Salesforce's token endpoint and API. It is not part of the integration and runs on its own. |
 
 ## The mock
@@ -35,3 +36,9 @@ sfDeskAuthClientSecret = "support-secret"
 ```
 
 Then run it from WSO2 Integrator, or with `bal run` in `integration/sfdemo`, and call `http://localhost:9090/sales`.
+
+For ghdemo, create `integration/ghdemo/Config.toml` (also git-ignored) with a GitHub token, run it in `integration/ghdemo`, and call `http://localhost:9090/whoami`:
+
+```toml
+githubAuthToken = "<a GitHub token>"
+```
