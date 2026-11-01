@@ -1,0 +1,9 @@
+[package]
+org = "acme"
+name = "ghtask"
+version = "0.1.0"
+distribution = "2201.13.7"
+title = "ghtask"
+
+[build-options]
+sticky = true
