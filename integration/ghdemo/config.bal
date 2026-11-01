@@ -1,2 +1,2 @@
 
-configurable string githubAuthToken = ?;
+configurable string ghAuthToken = ?;

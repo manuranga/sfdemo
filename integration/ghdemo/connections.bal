@@ -1,7 +1,7 @@
 import ballerinax/github;
 
-final github:Client github = check new ({
+final github:Client gh = check new ({
     auth: {
-        token: githubAuthToken
+        token: ghAuthToken
     }
 });
