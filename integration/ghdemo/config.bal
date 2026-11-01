@@ -1,3 +1,3 @@
 
-configurable string githubAuthToken = ?;
+configurable string ghAuthToken = ?;
 configurable string ordersDbUrl = "";
