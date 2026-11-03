@@ -1,0 +1,11 @@
+# The MCP endpoint. The build derives endpoints from HTTP services only, and an MCP service sits on an mcp:Listener.
+schemaVersion: "1.2"
+endpoints:
+  - name: mcp
+    displayName: MCP
+    service:
+      basePath: /mcp
+      port: 8090
+    type: REST
+    networkVisibilities:
+      - Public
