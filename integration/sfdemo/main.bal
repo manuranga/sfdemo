@@ -3,7 +3,7 @@ import ballerinax/salesforce;
 
 listener http:Listener httpDefaultListener = http:getDefaultListener();
 
-service / on httpDefaultListener {
+service /v2 on httpDefaultListener {
     resource function get sales() returns json|error {
         do {
             salesforce:OrganizationMetadata org = check sfSales->getOrganizationMetaData();
