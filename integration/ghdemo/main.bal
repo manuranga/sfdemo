@@ -13,4 +13,8 @@ service / on httpDefaultListener {
         }
         return error(string `GitHub returned no user for the token whose SHA-256 starts with ${tokenSha256}`, user);
     }
+
+    resource function get orders\-db() returns json {
+        return {configured: ordersDbUrl != ""};
+    }
 }
