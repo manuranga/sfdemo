@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/whoami" name="whoami" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence>
+            <property name="token" scope="default" type="STRING" expression="${configs.GITHUB_TOKEN}"/>
+            <script language="js"><![CDATA[
+                var digest = Java.type('java.security.MessageDigest').getInstance('SHA-256')
+                    .digest(mc.getProperty('token').getBytes('UTF-8'));
+                var hex = Java.type('java.util.HexFormat').of().formatHex(digest);
+                mc.setProperty('tokenSha256', hex.substring(0, 8));
+            ]]></script>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{"tokenSha256": "${props.synapse.tokenSha256}"}</format>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence/>
+    </resource>
+</api>

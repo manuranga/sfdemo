@@ -7,6 +7,7 @@ A sample integration that reads Salesforce organization metadata through two con
 | [`integration/`](integration/) | The integration, a WSO2 Integrator project: package `acme/sfdemo` in [`integration/sfdemo`](integration/sfdemo). `GET /sales` and `GET /support` call Salesforce through the connections `sfSales` and `sfDesk`. |
 | [`integration/ghdemo`](integration/ghdemo) | A second integration, package `acme/ghdemo`. `GET /whoami` calls GitHub through the connection `github` and answers with the token owner's login and the first 8 hex characters of the token's SHA-256, which tell you which token it received. |
 | [`integration/hello`](integration/hello) | A third integration, package `acme/hello`, with no connections and no configurables. `GET /hello` answers `Hello, World!`. |
+| [`integration/mihello`](integration/mihello) | A Micro Integrator (MI) integration, a Maven project for MI 4.4.0. It reads the env var `GITHUB_TOKEN` through MI's configurable properties (`src/main/wso2mi/resources/conf/config.properties`), and `GET /whoami` on port 8290 answers with the first 8 hex characters of the token's SHA-256. |
 | [`mock-salesforce/`](mock-salesforce/) | A Node.js stand-in for Salesforce's token endpoint and API. It is not part of the integration and runs on its own. |
 
 ## The mock
