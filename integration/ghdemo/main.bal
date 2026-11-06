@@ -15,6 +15,6 @@ service / on httpDefaultListener {
     }
 
     resource function get orders\-db() returns json {
-        return {configured: ordersUrl != ""};
+        return {configured: ordersUrl != "", version: 2};
     }
 }
